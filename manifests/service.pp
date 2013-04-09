@@ -11,7 +11,7 @@
 #  }
 #
 define supervisor::service (
-  $command,
+  $command                  = '',
   $config_file              = '',
   $ensure                   = present,
   $enable                   = true,
@@ -37,6 +37,11 @@ define supervisor::service (
   $environment              = undef,
   $umask                    = undef
 ) {
+
+  if $command == '' and $config_file == '' {
+    fail("Must pass `command` or `config_file` to service (${name})")
+  }
+
   include supervisor
 
   case $ensure {
