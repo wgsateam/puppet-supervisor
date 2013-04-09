@@ -12,6 +12,7 @@
 #
 define supervisor::service (
   $command,
+  $config_file,             = '',
   $ensure                   = present,
   $enable                   = true,
   $numprocs                 = 1,
@@ -80,11 +81,20 @@ define supervisor::service (
     require => Class['supervisor'],
   }
 
-  file { "${supervisor::params::conf_dir}/${name}.conf":
-    ensure  => $config_ensure,
-    content => template('supervisor/service.conf.erb'),
-    require => File["/var/log/supervisor/${name}"],
-    notify  => Class['supervisor::update'],
+  if $config_file {
+    file { "${supervisor::params::conf_dir}/${name}.conf":
+      ensure  => $config_ensure,
+      source  => $config_file,
+      require => File["/var/log/supervisor/${name}"],
+      notify  => Class['supervisor::update'],
+    }
+  } else {
+    file { "${supervisor::params::conf_dir}/${name}.conf":
+      ensure  => $config_ensure,
+      content => template('supervisor/service.conf.erb'),
+      require => File["/var/log/supervisor/${name}"],
+      notify  => Class['supervisor::update'],
+    }
   }
 
   service { "supervisor::${name}":
