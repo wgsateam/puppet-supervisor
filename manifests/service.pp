@@ -12,7 +12,7 @@
 #
 define supervisor::service (
   $command,
-  $config_file,             = '',
+  $config_file              = '',
   $ensure                   = present,
   $enable                   = true,
   $numprocs                 = 1,
