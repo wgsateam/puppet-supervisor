@@ -23,18 +23,22 @@ user=<%= user %>
 redirect_stderr=<%= redirect_stderr %>
 <% if @stdout_logfile -%>
 stdout_logfile=<%= stdout_logfile %>
-<% else -%>
+<% elsif @setup_logging -%>
 stdout_logfile=/var/log/supervisor/<%= name -%>/<%= name -%>.out
 <% end -%>
+<% if @setup_logging -%>
 stdout_logfile_maxbytes=<%= stdout_logfile_maxsize %>
 stdout_logfile_backups=<%= stdout_logfile_keep %>
+<% end -%>
 <% if @stderr_logfile -%>
 stderr_logfile=<%= stderr_logfile %>
-<% else -%>
+<% elsif @setup_logging -%>
 stderr_logfile=/var/log/supervisor/<%= name -%>/<%= name -%>.err
 <% end -%>
+<% if @setup_logging -%>
 stderr_logfile_maxbytes=<%= stderr_logfile_maxsize %>
 stderr_logfile_backups=<%= stderr_logfile_keep %>
+<% end -%>
 <% if @environment -%>
 environment=<%= environment %>
 <% end -%>

@@ -35,7 +35,8 @@ define supervisor::service (
   $stderr_logfile_maxsize   = '250MB',
   $stderr_logfile_keep      = 10,
   $environment              = undef,
-  $umask                    = undef
+  $umask                    = undef,
+  $setup_logging            = true
 ) {
 
   if $command == '' and $config_file == '' {
