@@ -195,7 +195,7 @@ class supervisor(
     ensure     => $service_ensure_real,
     enable     => $service_enable,
     hasrestart => true,
-    restart    => '/etc/init.d/supervisor stop >> /tmp/supervisor_restart.log 2>&1 && sleep 5 && /etc/init.d/supervisor start >> /tmp/supervisor_restart.log 2>&1 && /bin/echo -e "\n" >> /tmp/supervisor_restart.log',
+    restart    => '/etc/init.d/supervisor stop >> /tmp/supervisor_restart.log 2>&1 && sleep 10 && /etc/init.d/supervisor start >> /tmp/supervisor_restart.log 2>&1 && /bin/echo -e "\n" >> /tmp/supervisor_restart.log',
     require    => File[$supervisor::params::conf_file],
   }
 }
