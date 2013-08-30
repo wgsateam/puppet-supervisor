@@ -189,6 +189,8 @@ class supervisor(
     ensure  => $file_ensure,
     source  => 'puppet:///modules/supervisor/logrotate',
     require => Package[$supervisor::params::package],
+    owner   => root,
+    group   => root,
   }
 
   service { $supervisor::params::system_service:
