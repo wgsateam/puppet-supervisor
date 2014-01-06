@@ -14,7 +14,7 @@ define supervisor::service (
   $command                  = '',
   $config_file              = '',
   $ensure                   = present,
-  $enable                   = true,
+  $enable                   = hiera('supervisor::service::enable', true),
   $numprocs                 = 1,
   $numprocs_start           = 0,
   $priority                 = 999,
@@ -24,10 +24,10 @@ define supervisor::service (
   $exitcodes                = '0,2',
   $stopsignal               = 'TERM',
   $stopwait                 = 10,
-  $stopasgroup              = false,
+  $stopasgroup              = hiera('supervisor::service::stopasgroup', false),
   $user                     = 'root',
   $group                    = 'root',
-  $redirect_stderr          = false,
+  $redirect_stderr          = hiera('supervisor::service::redirect_stderr', false),
   $directory                = undef,
   $stdout_logfile           = undef,
   $stdout_logfile_maxsize   = '250MB',
@@ -37,7 +37,7 @@ define supervisor::service (
   $stderr_logfile_keep      = 10,
   $environment              = undef,
   $umask                    = undef,
-  $setup_logging            = true
+  $setup_logging            = hiera('supervisor::service::setup_logging', true),
 ) {
 
   if $command == '' and $config_file == '' {

@@ -100,10 +100,10 @@
 #
 class supervisor(
   $ensure                   = 'present',
-  $autoupgrade              = false,
+  $autoupgrade              = hiera('supervisor::autoupgrade', false),
   $service_ensure           = 'running',
-  $service_enable           = true,
-  $enable_inet_server       = false,
+  $service_enable           = hiera('supervisor::service_enable', true),
+  $enable_inet_server       = hiera('supervisor::enable_inet_server', false),
   $inet_server_port         = '*:9000',
   $inet_server_user         = undef,
   $inet_server_pass         = undef,
@@ -114,12 +114,12 @@ class supervisor(
   $minfds                   = 1024,
   $minprocs                 = 200,
   $childlogdir              = '/var/log/supervisor',
-  $nocleanup                = false,
+  $nocleanup                = hiera('supervisor::nocleanup', false),
   $user                     = undef,
   $umask                    = '022',
   $supervisor_environment   = undef,
   $identifier               = undef,
-  $recurse_config_dir       = false
+  $recurse_config_dir       = hiera('supervisor::recurse_config_dir', false),
 ) inherits supervisor::params {
 
   include supervisor::update
