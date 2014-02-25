@@ -58,6 +58,12 @@ See section [Usage](#usage) below.
 * This module requires that the target machines to which you are deploying supervisord have **yum repositories**
   **configured** for pulling the supervisord 3.0+ package (i.e. RPM).
     * Note: The supervisord version in EPEL6 is the outdated 2.x version, which _is not_ supported by this module.
+    * You have two options to get your hands on a supervisord 3.x RPM:
+        * Option 1: Build your own RPM.
+          Here, [wirbelsturm-rpm-supervisord](https://github.com/miguno/wirbelsturm-rpm-supervisord) may be of help.
+        * Option 2: Download a pre-generated RPM
+          [supervisor-3.0b2.el6.x86_64.rpm](https://yum.miguno.com/bigdata/redhat/6/x86_64/supervisor-3.0b2.el6.x86_64.rpm)
+          for the RHEL 6 OS family (64 bit).
 * This module has primarily been tested on the RHEL OS family.
 
 
