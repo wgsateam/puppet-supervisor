@@ -124,7 +124,7 @@ supervisor::logfile_backups: 5
 _Note: It is recommended to use Hiera to control deployments instead of using this module in your Puppet manifests_
 _directly._
 
-See [service.pp](manifests/service.pp) for examples.
+TBD
 
 
 <a name="service-management"></a>
