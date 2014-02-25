@@ -7,6 +7,9 @@ You can use this Puppet module to deploy supervisord to physical and virtual mac
 internal or cloud-based Puppet infrastructure and via a tool such as [Vagrant](http://www.vagrantup.com/) for local
 and remote deployments.
 
+Also, you can use this Puppet module to run services such as [Apache ZooKeeper](http://zookeeper.apache.org/) under
+process supervision via supervisord.  See [puppet-zookeeper](https://github.com/miguno/puppet-zookeeper) for an example.
+
 ---
 
 Table of Contents
