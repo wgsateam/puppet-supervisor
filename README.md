@@ -198,7 +198,7 @@ This module is based on -- and a fork of a fork of -- the great work done by
 
 <a name="license"></a>
 
-## License
+# License
 
 Copyright © 2013-2014 Michael G. Noll
 
