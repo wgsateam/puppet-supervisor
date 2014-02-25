@@ -124,20 +124,7 @@ supervisor::logfile_backups: 5
 _Note: It is recommended to use Hiera to control deployments instead of using this module in your Puppet manifests_
 _directly._
 
-```
-include supervisor
-
-supervisor::service {
-  'scribe':
-    ensure      => present,
-    enable      => true,
-    command     => '/usr/bin/scribed -c /etc/scribe/scribe.conf',
-    environment => 'HADOOP_HOME=/usr/lib/hadoop,LD_LIBRARY_PATH=/usr/lib/jvm/java-6-sun/jre/lib/amd64/server',
-    user        => 'scribe',
-    group       => 'scribe',
-    require     => [ Package['scribe'], User['scribe'] ];
-}
-```
+See [service.pp](manifests/service.pp) for examples.
 
 
 <a name="service-management"></a>
