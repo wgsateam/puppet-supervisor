@@ -92,6 +92,9 @@ Then use librarian-puppet to install (or update) the Puppet module.
 
 # Usage
 
+**IMPORTANT: Make sure you read and follow the [Requirements and assumptions](#requirements) section above.**
+**Otherwise the examples below will of course not work.**
+
 
 <a name="configuration-examples"></a>
 
