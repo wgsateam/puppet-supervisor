@@ -1,7 +1,7 @@
 # puppet-supervisor
 
-Wirbelsturm-compatible [Puppet](http://puppetlabs.com/) module to deploy [supervisord](http://www.supervisord.org/)
-version 3.0+.
+[Wirbelsturm](https://github.com/miguno/wirbelsturm)-compatible [Puppet](http://puppetlabs.com/) module to deploy
+[supervisord](http://www.supervisord.org/) version 3.0+.
 
 You can use this Puppet module to deploy supervisord to physical and virtual machines, for instance via your existing
 internal or cloud-based Puppet infrastructure and via a tool such as [Vagrant](http://www.vagrantup.com/) for local
