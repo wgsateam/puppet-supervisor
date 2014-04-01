@@ -167,6 +167,8 @@ Example:
   For instance, `init.pp` has code that should rather belong into `install.pp`.
 * Add more unit tests and specs.
 * Add Travis CI setup.
+* Add rollback/remove functionality to complete purge Supervisord related packages and configuration files from a
+  machine.
 
 
 <a name="changelog"></a>
