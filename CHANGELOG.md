@@ -2,7 +2,9 @@
 
 ## 1.0.2 (unreleased)
 
-* TBD
+IMPROVEMENTS:
+
+* Support Oracle Linux (thanks applewiskey).
 
 
 ## 1.0.1 (April 08, 2014)
