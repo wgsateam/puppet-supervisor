@@ -6,7 +6,7 @@ class supervisor::params {
       $system_service = 'supervisor'
       $package        = 'supervisor'
     }
-    'centos','fedora','redhat','Amazon': {
+    'centos','fedora','redhat','Amazon', 'OracleLinux': {
       $conf_file      = '/etc/supervisord.conf'
       $conf_dir       = '/etc/supervisord.d'
       $system_service = 'supervisord'
