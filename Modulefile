@@ -1,5 +1,5 @@
 name 'wirbelsturm-supervisor'
-version '1.0.2'
+version '1.0.3'
 source 'https://github.com/miguno/puppet-supervisor.git'
 author 'Michael G. Noll, who forked from mhahn, who forked from plathrop'
 license 'Apache License, Version 2.0'
