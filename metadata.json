@@ -1,0 +1,13 @@
+{
+  "name" : "wirbelsturm-supervisor",
+  "version": "1.0.3",
+  "author" : "Michael G. Noll",
+  "summary" : "Module for managing and configuring supervisord",
+  "license" : "Apache License, Version 2.0",
+  "source" : "https://github.com/miguno/puppet-supervisor.git",
+  "project_page" : "https://github.com/miguno/puppet-supervisor",
+  "dependencies" : [
+  	  { "name" : "puppetlabs/stdlib", "version_requirement" : ">= 4.1.0" }
+  ],
+  "operatingsystem_support" : []
+  }
