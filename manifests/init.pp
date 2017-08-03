@@ -193,11 +193,16 @@ class supervisor(
     group   => root,
   }
 
+  $restart_cmd = $::systemd ? {
+    true    => 'systemctl restart supervisord.service',
+    default => "/etc/init.d/${supervisor::params::system_service} stop && sleep 10 && /etc/init.d/${supervisor::params::system_service} start"
+  }
+
   service { $supervisor::params::system_service:
     ensure     => $service_ensure_real,
     enable     => $service_enable,
     hasrestart => true,
-    restart    => "/etc/init.d/${supervisor::params::system_service} stop && sleep 10 && /etc/init.d/${supervisor::params::system_service} start",
+    restart    => $restart_cmd,
     require    => File[$supervisor::params::conf_file],
   }
 }
